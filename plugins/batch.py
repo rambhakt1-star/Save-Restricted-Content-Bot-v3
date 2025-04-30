@@ -101,7 +101,7 @@ async def get_msg(c, u, i, d, lt):
         else:
             if u:
                 try:
-                    async for _ in u.get_dialogs(limit=50): pass
+                    async for _ in u.get_dialogs(limit=1000): pass
                     chat_id = i if str(i).startswith('-100') else f'-100{i}' if i.isdigit() else i
                     try:
                         peer = await u.resolve_peer(chat_id)
